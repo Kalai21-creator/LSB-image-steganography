@@ -1,0 +1,55 @@
+NAME: KALAIVANAN D
+Date:21/10/2024
+Description: LSB image Steganography 
+
+
+Sample Input : Encoding  ./a.out -e beautiful.bmp secret_file.txt < stego_image.bmp >
+               Decoding   ./a.out -d stego_image.bmp < output_file.txt >
+ 
+  
+
+ Encoding:
+
+kalai@KALAI21:~/C-Project-1/4-SkeletonCode$ ./a.out -e beautiful.bmp  secret.txt  stego_image.bmp
+INFO: Opening required files
+INFO: Opened beautiful.bmp
+INFO: Opened secret.txt
+INFO: Opened stego_image.bmp
+INFO: Done
+INFO: ## Encoding Procedure Started ##
+INFO: Checking for beautiful.bmp capacity to handle secret.txt
+INFO: Done. Found OK
+INFO: Copying Image Header
+INFO: Done
+INFO: Encoding Magic String Signature
+INFO: Done
+INFO: Encoding secret.txt File Extension
+INFO: Done
+INFO: Encoding secret.txt File Size
+INFO: Done
+INFO: Encoding secret.txt File Data
+INFO: Done
+INFO: Copying Left Over Data
+INFO: Done
+INFO: ## Encoding Done Successfully ##
+    
+Decoding:
+
+kalai@KALAI21:~/C-Project-1/4-SkeletonCode$ ./a.out -d stego_image.bmp
+No output file provided. Using default: output
+Output file name: output
+INFO: ## Decoding Procedure Started ##
+INFO: Opening required files
+INFO: Opened stego_image.bmp
+Enter the magic string to decode:
+#*
+INFO: Decoding Magic String Signature
+INFO: Done
+Output file with decoded extension: output.txt
+INFO: Opened output.txt
+INFO: Done. Opened all required files
+INFO: Decoding output.txt File Size
+INFO: Done
+INFO: Decoding output.txt File Data
+INFO: Done
+INFO: ## Decoding Done Successfully ##
